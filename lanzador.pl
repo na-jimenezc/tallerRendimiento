@@ -11,10 +11,10 @@
 $Path = `pwd`;
 chomp($Path);
 
-#Para las pruebas, fueron editadas las líneas que tienen copmentarioal frente
+#Para las pruebas, fueron editadas las líneas que tienen copmentario al frente
 $Nombre_Ejecutable = "MM_ejecutable";
 @Size_Matriz = ("3000");  #Matriz de X * X
-@Num_Hilos = (1);        #Se pone el hilo acá
+@Num_Hilos = (8);        #Se pone el hilo acá
 $Repeticiones = 3;       #Y acá se pone el número de repeticiones
 
 #Se hace el foreach de la matriz y el número de hilos
@@ -46,7 +46,7 @@ foreach $size (@Size_Matriz){
 		}
 
 		#Acá se calculó el promedio / sobre las repeticiones
-		my $avg_time = $total_time / $Repeticiones;
-		print "El tiempo promedio de ejecución para matriz $size x $size con $hilo hilo es: $avg_time µs\n";
+		my $avg_time = ($total_time / $Repeticiones)/1000000;
+		print "El tiempo promedio de ejecución para matriz $size x $size con $hilo hilo(s) es: $avg_time segundos\n";
 	}
 }
